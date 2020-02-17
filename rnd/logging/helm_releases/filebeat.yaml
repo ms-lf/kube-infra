@@ -1,0 +1,68 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: filebeat
+spec:
+  releaseName: filebeat
+  chart:
+    repository: "https://helm.elastic.co"
+    name: filebeat
+    version: 7.6.0
+  values:
+    extraVolumeMounts:
+        - name: inputs
+        mountPath: /usr/share/filebeat/inputs.d
+        readOnly: true
+    extraVolumes:
+        - name: inputs
+        configMap:
+          defaultMode: 0600
+          name: filebeat-inputs
+    filebeatConfig:
+      filebeat.yml: |
+        filebeat.config:
+          modules:
+            path: ${path.config}/modules.d/*.yml
+            reload.enabled: false                
+        output.elasticsearch:
+          hosts:
+            - 'elasticsearch:9200'
+          loadbalancer: true
+          compression_level: 4
+          protocol: http
+          index: "k8s.%{[kubernetes.namespace]}-%{+yyyy.MM.dd}"
+        
+        setup.ilm.enabled: false
+        setup.template.enabled: true
+        setup.template.name: "k8s"
+        setup.template.pattern: "k8s.*"
+        setup.template.overwrite: false
+        setup.template.settings:
+          index.number_of_shards: 1
+          index.number_of_replicas: 1
+        
+        logging.level: debug
+        logging.to_files: true
+        logging.files:
+          path: /var/log/filebeat
+          name: filebeat
+          keepfiles: 2
+          permissions: 0644
+          logging.files.rotateeverybytes: 268435456
+        logging.metrics.enabled: false
+        logging.json: false    
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: filebeat-inputs
+  labels:
+    k8s-app: filebeat
+data:
+  kubernetes.yml: |-
+    - type: docker
+      containers.ids:
+      - "*"
+      processors:
+        - add_kubernetes_metadata:
+            in_cluster: true
