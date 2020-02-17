@@ -10,11 +10,11 @@ spec:
     version: 7.6.0
   values:
     extraVolumeMounts:
-        - name: inputs
+      - name: inputs
         mountPath: /usr/share/filebeat/inputs.d
         readOnly: true
     extraVolumes:
-        - name: inputs
+      - name: inputs
         configMap:
           defaultMode: 0600
           name: filebeat-inputs
