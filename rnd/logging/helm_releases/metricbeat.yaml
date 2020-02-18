@@ -8,17 +8,8 @@ spec:
   chart:
     repository: "https://helm.elastic.co"
     name: metricbeat
-    version: 7.5.0
-  values:
-    rbac:
-      pspEnabled: true
-    extraEnvs:
-      - name: ELASTICSEARCH_HOSTS
-        value: 'elasticsearch:9200'
-      - name: NODE_IP
-        valueFrom:
-          fieldRef:
-            fieldPath: status.hostIP  
+    version: 7.6.0
+  values: 
     metricbeatConfig:
       metricbeat.yml: |
         system:
