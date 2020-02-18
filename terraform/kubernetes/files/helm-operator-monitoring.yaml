@@ -3,8 +3,8 @@ helm:
 rbac:
   pspEnabled: true
 clusterRole:
-  create: false
-createCRD: false
+  create: true
+createCRD: true
 logFormat: json
 allowNamespace: monitoring
 git:
