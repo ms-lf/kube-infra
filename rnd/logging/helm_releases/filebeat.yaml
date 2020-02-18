@@ -1,4 +1,4 @@
-apiVersion: flux.weave.works/v1beta1
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: filebeat
@@ -52,18 +52,3 @@ spec:
           logging.files.rotateeverybytes: 268435456
         logging.metrics.enabled: false
         logging.json: false    
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: filebeat-inputs
-  labels:
-    k8s-app: filebeat
-data:
-  kubernetes.yml: |-
-    - type: docker
-      containers.ids:
-      - "*"
-      processors:
-        - add_kubernetes_metadata:
-            in_cluster: true
