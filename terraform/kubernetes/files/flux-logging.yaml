@@ -1,0 +1,11 @@
+logFormat: json
+allowedNamespaces:
+    - logging
+rbac.pspEnabled: true
+git:
+  url: git@github.com:ms-lf/kube-infra.git
+  path: rnd/logging
+  pollInterval: 1m
+  label: flux-logging
+syncGarbageCollection:
+  enabled: true

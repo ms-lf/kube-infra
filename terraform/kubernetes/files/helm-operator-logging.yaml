@@ -1,0 +1,14 @@
+createCRD: false
+logFormat: json
+allowNamespace: logging
+git:
+  url: git@github.com:ms-lf/kube-infra.git
+  ssh:
+    secretName: flux-logging-git-deploy
+helm:
+  versions: "v3"
+rbac:
+  pspEnabled: true
+clusterRole:
+  create: false
+

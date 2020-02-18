@@ -2,6 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: filebeat
+  namespace: logging
 spec:
   releaseName: filebeat
   chart:

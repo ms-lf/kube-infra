@@ -1,0 +1,13 @@
+helm:
+  versions: "v3"
+rbac:
+  pspEnabled: true
+clusterRole:
+  create: false
+createCRD: false
+logFormat: json
+allowNamespace: monitoring
+git:
+  url: git@github.com:ms-lf/kube-infra.git
+  ssh:
+    secretName: flux-monitoring-git-deploy

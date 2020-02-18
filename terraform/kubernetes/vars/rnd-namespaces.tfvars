@@ -6,7 +6,10 @@ namespaces = {
         labels = {
             "istio-injection" = "disabled"
         }
-        "fluxcd" = "flux-monitoring"
+        helm = [
+            "flux",
+            "helm-operator"
+        ]
     },
     logging = {
         annotations = {
@@ -15,8 +18,20 @@ namespaces = {
         labels = {
             "istio-injection" = "disabled"
         }
-        "fluxcd" = "flux-logging"
+         helm = [
+            "flux",
+            "helm-operator"
+        ]    
     }
 }
 
-
+helm_charts = {
+    flux = {
+        "chart" = "flux"
+        "version" = "1.2.0"
+    }
+    helm-operator = {
+        "chart" = "helm-operator"
+        "version" = "0.7.0"
+    }
+}
