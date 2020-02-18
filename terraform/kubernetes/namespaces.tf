@@ -1,6 +1,6 @@
  resource "kubernetes_namespace" "namespace" {
 
-  for_each                    = var.namespaces
+  for_each = var.namespaces
 
   metadata {
      

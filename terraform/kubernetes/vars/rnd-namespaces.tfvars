@@ -1,5 +1,5 @@
 namespaces = {
-    monitoring = {
+    flux-admin = {
         annotations = {
             "prometheus.io/scrape" = "false"
         }
@@ -10,18 +10,6 @@ namespaces = {
             "flux",
             "helm-operator"
         ]
-    },
-    logging = {
-        annotations = {
-            "prometheus.io/scrape" = "false"
-        }
-        labels = {
-            "istio-injection" = "disabled"
-        }
-         helm = [
-            "flux",
-            "helm-operator"
-        ]    
     }
 }
 

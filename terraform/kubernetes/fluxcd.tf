@@ -19,13 +19,10 @@ locals {
   ])
 }
 
-
-
- resource "helm_release" "this" {
+resource "helm_release" "this" {
 
    for_each = {
-    for release in local.helm_releases : "${release.name}-${release.namespace}" 
-=> release
+    for release in local.helm_releases : "${release.name}-${release.namespace}" => release
   }
   name              = each.key
   atomic            = true

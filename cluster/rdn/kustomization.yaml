@@ -1,0 +1,4 @@
+commonLabels:
+  team: lf-sre
+bases:
+- ./base-templates/

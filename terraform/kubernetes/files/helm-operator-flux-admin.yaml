@@ -1,6 +1,5 @@
 createCRD: true
 logFormat: json
-allowNamespace: logging
 git:
   url: git@github.com:ms-lf/kube-infra.git
   ssh:

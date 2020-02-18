@@ -2,7 +2,6 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: metrics-server
-  namespace: monitoring
 spec:
   releaseName: metrics-server
   chart:

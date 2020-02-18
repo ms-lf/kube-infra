@@ -2,7 +2,6 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: podinfo
-  namespace: monitoring
 spec:
   releaseName: podinfo
   chart:
