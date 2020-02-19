@@ -4,4 +4,4 @@ commonLabels:
 resources:
 - ns-logging
 - ns-monitoring
-- ns-gatekeeper-system
+- ns-flux-admin
