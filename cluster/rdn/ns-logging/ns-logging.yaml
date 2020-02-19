@@ -3,6 +3,4 @@ kind: Namespace
 metadata:
   labels:
     name: logging
-  annotation:
-    prometheus.io/scrape: "false"
   name: logging
