@@ -1,4 +1,6 @@
 commonLabels:
   team: lf-sre
-bases:
-- ./base-templates/
+  dc: rnd
+resources:
+- ns-logging
+- ns-monitoring

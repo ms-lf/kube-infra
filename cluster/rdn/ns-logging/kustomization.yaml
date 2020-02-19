@@ -1,0 +1,5 @@
+namespace: logging
+resources:
+- ns-logging.yaml
+- filebeat-inputs.yaml
+- ../../../base/filebeat

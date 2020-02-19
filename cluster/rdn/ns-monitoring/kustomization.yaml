@@ -1,0 +1,4 @@
+namespace: logging
+resources:
+- ns-monitoring.yaml
+- ../../../base/podinfo

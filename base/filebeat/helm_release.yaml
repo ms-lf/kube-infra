@@ -21,26 +21,13 @@ spec:
     filebeatConfig:
       filebeat.yml: |
         filebeat.config:
+          inputs:
+            enabled: true
+            path: inputs.d/*.yml
           modules:
             path: ${path.config}/modules.d/*.yml
             reload.enabled: false                
-        output.elasticsearch:
-          hosts:
-            - 'elasticsearch:9200'
-          loadbalancer: true
-          compression_level: 4
-          protocol: http
-          index: "k8s.%{[kubernetes.namespace]}-%{+yyyy.MM.dd}"
-        
-        setup.ilm.enabled: false
-        setup.template.enabled: true
-        setup.template.name: "k8s"
-        setup.template.pattern: "k8s.*"
-        setup.template.overwrite: false
-        setup.template.settings:
-          index.number_of_shards: 1
-          index.number_of_replicas: 1
-        
+
         logging.level: debug
         logging.to_files: true
         logging.files:
@@ -50,4 +37,6 @@ spec:
           permissions: 0644
           logging.files.rotateeverybytes: 268435456
         logging.metrics.enabled: false
-        logging.json: false    
+        logging.json: false  
+
+
