@@ -1,9 +1,9 @@
-createCRD: true
+createCRD: false
 logFormat: json
 git:
   url: git@github.com:ms-lf/kube-infra.git
   ssh:
-    secretName: flux-logging-git-deploy
+    secretName: flux-flux-admin-git-deploy
 helm:
   versions: "v3"
 rbac:

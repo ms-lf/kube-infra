@@ -6,7 +6,7 @@ git:
   url: git@github.com:ms-lf/kube-infra.git
   user: rdn-cluster
   email: rdn-cluster@flux-admin.ns
-  path: rnd/logging
+  path: cluster/rdn
   pollInterval: 1m
   label: flux-admin
 syncGarbageCollection:

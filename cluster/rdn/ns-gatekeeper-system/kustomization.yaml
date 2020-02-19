@@ -1,0 +1,4 @@
+namespace: gatekeeper-system
+resources:
+- ns-gatekeeper-system.yaml
+- ../../../base/gatekeeper

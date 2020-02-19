@@ -1,0 +1,20 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: gatekeeper
+spec:
+  releaseName: gatekeeper-operator
+  chart:
+    git: "git@github.com:open-policy-agent/gatekeeper.git"
+    ref: tags/v3.1.0-beta.7
+    path: chart/gatekeeper-operator
+  values:
+    resources:
+      limits:
+        cpu: 1
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+
+
