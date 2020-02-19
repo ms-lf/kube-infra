@@ -3,3 +3,4 @@ resources:
 - ns-logging.yaml
 - filebeat-inputs.yaml
 - ../../../base/filebeat
+- ../../../base/metricbeat
