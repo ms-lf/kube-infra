@@ -4,5 +4,5 @@ metadata:
   labels:
     name: monitoring
   annotation:
-    "prometheus.io/scrape": "false"
+    prometheus.io/scrape: "false"
   name: monitoring
