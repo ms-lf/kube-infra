@@ -6,5 +6,4 @@ bases:
 resources:
 - ns-logging
 - ns-monitoring
-- ns-flux-admin
 - containerlimits.yaml
