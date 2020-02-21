@@ -1,6 +1,9 @@
 namespace: logging
+bases:
+- ../../../base/opendistro-es
+- ../../../base/filebeat
+- ../../../base/metricbeat
 resources:
 - ns-logging.yaml
 - filebeat-inputs.yaml
-- ../../../base/filebeat
-- ../../../base/metricbeat
+
