@@ -1,3 +1,0 @@
-namespace: flux-admin
-resources:
-- ../../../base/gatekeeper

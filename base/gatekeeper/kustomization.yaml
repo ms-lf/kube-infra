@@ -4,3 +4,5 @@ resources:
 - helm_release.yaml
 - crd.yaml
 - k8scontainterlimits_template.yaml
+- k8suniqueingresshost_template.yaml
+- k8suniqueserviceselector_template.yaml

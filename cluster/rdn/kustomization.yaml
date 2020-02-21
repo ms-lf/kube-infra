@@ -1,7 +1,10 @@
 commonLabels:
   team: lf-sre
   dc: rnd
+bases:
+- ../../base/gatekeeper
 resources:
 - ns-logging
 - ns-monitoring
 - ns-flux-admin
+- containerlimits.yaml
