@@ -15,6 +15,7 @@ spec:
 # https://ftclausen.github.io/general/setting_up_k8s_with_metrics_server/ setup client crt and provide ca crt
     args: 
      - --kubelet-insecure-tls
+     - --kubelet-preferred-address-types=InternalIP
      - --v=5
     rbac:
       pspEnabled: true
