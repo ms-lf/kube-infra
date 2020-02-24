@@ -1,4 +1,4 @@
-apiVersion: flux.weave.works/v1beta1
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: opendistro-es
@@ -6,8 +6,8 @@ spec:
   releaseName: opendistro-rnd
   chart:
     git: git@github.com:opendistro-for-elasticsearch/opendistro-build.git
-    ref: "v0.10.0"
     path: "helm/opendistro-es"
+    ref: master
   values:
     kibana:
       enabled: true
