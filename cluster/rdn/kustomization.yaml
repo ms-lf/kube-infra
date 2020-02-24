@@ -3,7 +3,7 @@ commonLabels:
   dc: rnd
 bases:
 - ../../base/gatekeeper
+- ../../base/metric-server
 resources:
 - ns-logging
 - ns-monitoring
-- containerlimits.yaml

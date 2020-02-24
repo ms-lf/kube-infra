@@ -2,8 +2,10 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: metrics-server
+  namespace: default
 spec:
   releaseName: metrics-server
+  targetNamespace: kube-system
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
     version: 2.9.0
