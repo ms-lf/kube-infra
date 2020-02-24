@@ -12,5 +12,9 @@ spec:
     name: metrics-server
   values:
     replicaCount: 1
+# https://ftclausen.github.io/general/setting_up_k8s_with_metrics_server/ setup client crt and provide ca crt
+    args: 
+     - --kubelet-insecure-tls
+     - --v=5
     rbac:
       pspEnabled: true
