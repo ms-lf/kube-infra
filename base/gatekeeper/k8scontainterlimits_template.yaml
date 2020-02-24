@@ -9,12 +9,6 @@ spec:
         kind: K8sContainerLimits
       validation:
         # Schema for the `parameters` field
-        openAPIV3Schema:
-          properties:
-            cpu:
-              type: string
-            memory:
-              type: string
   targets:
     - target: admission.k8s.gatekeeper.sh
       rego: |
@@ -182,24 +176,4 @@ spec:
           container := input.review.object.spec[field][_]
           missing(container.resources.limits, "memory")
           msg := sprintf("container <%v> has no memory limit", [container.name])
-        }
-
-        general_violation[{"msg": msg, "field": field}] {
-          container := input.review.object.spec[field][_]
-          cpu_orig := container.resources.limits.cpu
-          cpu := canonify_cpu(cpu_orig)
-          max_cpu_orig := input.parameters.cpu
-          max_cpu := canonify_cpu(max_cpu_orig)
-          cpu > max_cpu
-          msg := sprintf("container <%v> cpu limit <%v> is higher than the maximum allowed of <%v>", [container.name, cpu_orig, max_cpu_orig])
-        }
-
-        general_violation[{"msg": msg, "field": field}] {
-          container := input.review.object.spec[field][_]
-          mem_orig := container.resources.limits.memory
-          mem := canonify_mem(mem_orig)
-          max_mem_orig := input.parameters.memory
-          max_mem := canonify_mem(max_mem_orig)
-          mem > max_mem
-          msg := sprintf("container <%v> memory limit <%v> is higher than the maximum allowed of <%v>", [container.name, mem_orig, max_mem_orig])
         }
