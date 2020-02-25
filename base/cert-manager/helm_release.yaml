@@ -6,7 +6,8 @@ spec:
   releaseName: cert-manager
   chart:
     repository: "https://charts.jetstack.io"
-    name: jetstack/cert-manager
-    version: v0.13.1
+    name: jetstack/cert-manager 
+    version: "v0.13.1"
+    helmVersion: "v2"
   values:
  
