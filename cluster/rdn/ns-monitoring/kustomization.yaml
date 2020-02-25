@@ -1,4 +1,5 @@
 namespace: logging
 resources:
+- limits.yaml
 - ns-monitoring.yaml
 - ../../../base/podinfo
