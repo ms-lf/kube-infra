@@ -9,9 +9,9 @@ spec:
     agent:
       tlsSecret: kiam-agent-certificate-secret
       tlsCerts:
-      certFileName: tls.crt
-      keyFileName: tls.key
-      caFileName: ca.crt
+        certFileName: tls.crt
+        keyFileName: tls.key
+        caFileName: ca.crt
     server:
       assumeRoleArn: "arn:aws:iam::769214547189:role/nodes.kops.k8s.local"
       tlsSecret: kiam-server-certificate-secret
