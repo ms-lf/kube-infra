@@ -1,0 +1,39 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: cert-manager
+spec:
+  values:
+    global:
+      podSecurityPolicy:
+        enabled: true
+    replicaCount: 2
+    strategy: 
+      type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 0
+        maxUnavailable: 1
+    image:
+      tag: v0.13.1
+    resources: 
+      requests:
+        cpu: 50m
+        memory: 128Mi
+    prometheus:
+      enabled: false
+    webhook:
+      image:
+        tag: v0.13.1
+      resources: 
+        requests:
+          cpu: 50m
+          memory: 64Mi
+    cainjector:
+      image:
+        tag: v0.13.1
+      resources: 
+        requests:
+          cpu: 50m
+          memory: 64Mi
+      
+        
