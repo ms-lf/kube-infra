@@ -38,5 +38,5 @@ spec:
         persistence:
           enabled: false
       client:
-        enabled: false
+        enabled: true
         replicas: 1
