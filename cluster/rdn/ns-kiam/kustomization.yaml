@@ -1,0 +1,12 @@
+namespace: kiam
+resources:
+- ns-kiam.yaml
+- issuer.yaml
+- certificates.yaml
+
+
+bases:
+- ../../../base/kiam
+
+patchesStrategicMerge:
+- helm_release_patch.yaml

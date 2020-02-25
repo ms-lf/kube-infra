@@ -1,0 +1,12 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kiam
+spec:
+  releaseName: kiam
+  chart:
+    repository: https://uswitch.github.io/kiam-helm-charts/charts/
+    name: uswitch/kiam
+    version: "5.7.0"
+  values:
+ 

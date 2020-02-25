@@ -5,6 +5,7 @@ bases:
 - ../../base/gatekeeper
 - ../../base/metric-server
 resources:
+- ns-kiam
 - ns-cert-manager
 - ns-logging
 - ns-monitoring
