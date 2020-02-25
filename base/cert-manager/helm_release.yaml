@@ -5,9 +5,8 @@ metadata:
 spec:
   releaseName: cert-manager
   chart:
-    repository: "https://charts.jetstack.io"
-    name: jetstack/cert-manager 
-    version: "v0.13.1"
-  helmVersion: "v3"
+    git: git@github.com:jetstack/cert-manager
+    path: deploy/charts/cert-manager
+    ref: "release-0.13"
   values:
  
