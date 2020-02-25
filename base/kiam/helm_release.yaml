@@ -6,7 +6,7 @@ spec:
   releaseName: kiam
   chart:
     repository: https://uswitch.github.io/kiam-helm-charts/charts/
-    name: uswitch/kiam
+    name: kiam
     version: "5.7.0"
   values:
  
