@@ -5,7 +5,9 @@ git:
   ssh:
     secretName: flux-flux-admin-git-deploy
 helm:
-  versions: "v3"
+  versions: "v2,v3"
+tillerSidecar:
+  enabled: true
 rbac:
   pspEnabled: true
 clusterRole:
