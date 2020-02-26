@@ -8,15 +8,14 @@ spec:
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: root-ca-cert
+  name: root-ca-cert-rnd
 spec:
-  secretName: root-ca-cert
-  commonName: root-ca-cert
+  secretName: root-ca-cert-rnd
+  commonName: root-ca-cert-rnd
   # https://github.com/jetstack/cert-manager/issues/2407
   usages:
     - digital signature
     - key encipherment
-    - server auth
     - client auth
   isCA: true
   issuerRef:
@@ -29,4 +28,4 @@ metadata:
   name: self-signed-certificate-issuer
 spec:
   ca:
-    secretName: root-ca-cert
+    secretName: root-ca-cert-rnd
