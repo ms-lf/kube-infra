@@ -1,13 +1,16 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: kiam-agent-certificate-rnd2
+  name: kiam-agent-certificate
 spec:
   secretName: kiam-agent-certificate-secret
   issuerRef:
     name: self-signed-certificate-issuer
     kind: Issuer
   commonName: kiam-agent
+  usages:
+    - client auth
+    - server auth
   dnsNames:
     - kiam-agent
   renewBefore: 360h 
@@ -15,13 +18,16 @@ spec:
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: kiam-server-certificate-rnd2
+  name: kiam-server-certificate
 spec:
   secretName: kiam-server-certificate-secret
   issuerRef:
     name: self-signed-certificate-issuer
     kind: Issuer
   commonName: kiam-server
+  usages:
+    - client auth
+    - server auth
   dnsNames:
     - kiam-server
     - localhost
