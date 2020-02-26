@@ -22,7 +22,7 @@ spec:
         keyFileName: tls.key
         caFileName: ca.crt
     server:
-      assumeRoleArn: "arn:aws:iam::769214547189:role/nodes.kops.k8s.local"
+      assumeRoleArn: "arn:aws:iam::769214547189:role/kiam-server"
       roleBaseArn: arn:aws:iam::769214547189:role/
       tlsSecret: kiam-server-certificate-secret
       log:
