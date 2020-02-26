@@ -21,8 +21,10 @@ spec:
       log:
         level: debug
       extraEnv:
-        GRPC_GO_LOG_SEVERITY_LEVEL: info
-        GRPC_GO_LOG_VERBOSITY_LEVEL: 8
+        - name: GRPC_GO_LOG_SEVERITY_LEVEL
+          value: info
+        - name: GRPC_GO_LOG_VERBOSITY_LEVEL
+          value:  8
       tlsCerts:
         certFileName: tls.crt
         keyFileName: tls.key
