@@ -7,6 +7,8 @@ spec:
     psp:
       create: true
     agent:
+      host:
+        iptables: true
       tlsSecret: kiam-agent-certificate-secret
       tlsCerts:
         certFileName: tls.crt
@@ -14,6 +16,7 @@ spec:
         caFileName: ca.crt
     server:
       assumeRoleArn: "arn:aws:iam::769214547189:role/nodes.kops.k8s.local"
+      roleBaseArn: arn:aws:iam::769214547189:role/
       tlsSecret: kiam-server-certificate-secret
       tlsCerts:
         certFileName: tls.crt
@@ -22,7 +25,7 @@ spec:
     extraHostPathMounts:
       - name: ssl-certs
         mountPath: /etc/ssl/certs
-        hostPath: /etc/pki/ca-trust/extracted/pem
+        hostPath: /etc/ssl/certs #Debian kops path
         readOnly: true
 
 
