@@ -14,10 +14,7 @@ spec:
   commonName: root-ca-cert
   # https://github.com/jetstack/cert-manager/issues/2407
   usages:
-    - digital signature
-    - key encipherment
-    - crl sign
-    - client auth
+  - "any"
   isCA: true
   issuerRef:
     name: root-ca-issuer

@@ -9,8 +9,7 @@ spec:
     kind: Issuer
   commonName: kiam-agent
   usages:
-    - client auth
-    - server auth
+  - "any"
   dnsNames:
     - kiam-agent
   renewBefore: 360h 
@@ -26,8 +25,7 @@ spec:
     kind: Issuer
   commonName: kiam-server
   usages:
-    - client auth
-    - server auth
+  - "any"
   dnsNames:
     - kiam-server
     - localhost
