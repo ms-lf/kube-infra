@@ -17,6 +17,7 @@ spec:
     - digital signature
     - key encipherment
     - crl sign
+    - client auth
   isCA: true
   issuerRef:
     name: root-ca-issuer
