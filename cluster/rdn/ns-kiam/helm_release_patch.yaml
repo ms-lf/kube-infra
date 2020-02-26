@@ -40,7 +40,7 @@ spec:
     extraHostPathMounts:
       - name: ssl-certs
         mountPath: /etc/ssl/certs
-        hostPath: /etc/ssl/certs/mozilla #Debian kops path
+        hostPath: /usr/share/ca-certificates/mozilla #Debian kops path
         readOnly: true
 
 
