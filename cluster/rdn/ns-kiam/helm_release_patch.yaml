@@ -19,6 +19,11 @@ spec:
         certFileName: tls.crt
         keyFileName: tls.key
         caFileName: ca.crt
+    extraHostPathMounts:
+      - name: ssl-certs
+        mountPath: /etc/ssl/certs
+        hostPath: /etc/pki/ca-trust/extracted/pem
+        readOnly: true
 
 
       
