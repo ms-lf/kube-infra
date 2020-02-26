@@ -12,6 +12,11 @@ metadata:
 spec:
   secretName: root-ca-cert
   commonName: root-ca-cert
+  keyUsages:
+    - digital signature
+    - key encipherment
+    - server auth
+    - client auth
   isCA: true
   issuerRef:
     name: root-ca-issuer
