@@ -12,6 +12,7 @@ metadata:
 spec:
   secretName: root-ca-cert
   commonName: root-ca-cert
+  # https://github.com/jetstack/cert-manager/issues/2407
   usages:
     - digital signature
     - key encipherment
