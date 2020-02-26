@@ -12,7 +12,7 @@ metadata:
 spec:
   secretName: root-ca-cert
   commonName: root-ca-cert
-  keyUsages:
+  usages:
     - digital signature
     - key encipherment
     - server auth
