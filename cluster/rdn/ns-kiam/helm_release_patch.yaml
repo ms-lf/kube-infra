@@ -24,6 +24,7 @@ spec:
         caFileName: ca.crt
     server:
       service:
+        port: 8443
         targetPort: 8443
       tolerations:
        - key: node-role.kubernetes.io/master
