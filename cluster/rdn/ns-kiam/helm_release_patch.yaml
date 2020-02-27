@@ -16,6 +16,7 @@ spec:
           value: "5"
       host:
         iptables: false
+        interface: "cali+"
       tlsSecret: kiam-agent-certificate-secret
       tlsCerts:
         certFileName: tls.crt
