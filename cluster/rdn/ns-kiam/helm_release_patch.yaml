@@ -22,6 +22,8 @@ spec:
         keyFileName: tls.key
         caFileName: ca.crt
     server:
+      service:
+        targetPort: 8443
       tolerations:
        - key: node-role.kubernetes.io/master
          effect: NoSchedule
