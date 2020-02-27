@@ -7,6 +7,6 @@ spec:
   chart:
     git: git@github.com:isindir/sops-secrets-operator
     path: chart/sops-secrets-operator
-    ref: "master/0.0.9"
+    ref: "0.0.9"
   values:
  
