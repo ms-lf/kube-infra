@@ -9,3 +9,4 @@ resources:
 - ns-cert-manager
 - ns-logging
 - ns-monitoring
+- ns-sops

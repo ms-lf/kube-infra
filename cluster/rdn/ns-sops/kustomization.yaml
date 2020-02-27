@@ -1,0 +1,9 @@
+namespace: sops
+resources:
+- ns-sops.yaml
+
+bases:
+- ../../../base/sops-secrets-operator
+
+patchesStrategicMerge:
+- helm_release_patch.yaml

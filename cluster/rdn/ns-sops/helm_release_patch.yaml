@@ -1,0 +1,15 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: sops-secrets-operator
+spec:
+  values:
+    podAnnotations:
+      iam.amazonaws.com/role: sops-kms
+    resources: 
+      limits:
+        cpu: 200m
+        memory: 256Mi
+      requests:
+        cpu: 100m
+        memory: 128Mi
