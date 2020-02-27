@@ -15,7 +15,7 @@ spec:
         - name: AWS_METADATA_SERVICE_NUM_ATTEMPTS
           value: "5"
       host:
-        iptables: false
+        iptables: true
         interface: "cali+"
       tlsSecret: kiam-agent-certificate-secret
       tlsCerts:
