@@ -22,8 +22,12 @@ spec:
         keyFileName: tls.key
         caFileName: ca.crt
     server:
+      tolerations:
+       - key: node-role.kubernetes.io/master
+         effect: NoSchedule
+      nodeSelector:
+        kubernetes.io/role: master
       assumeRoleArn: "arn:aws:iam::769214547189:role/kiam-server"
-      roleBaseArn: arn:aws:iam::769214547189:role/
       tlsSecret: kiam-server-certificate-secret
       sslCertHostPath: /usr/share/ca-certificates/mozilla
       useHostNetwork: true
