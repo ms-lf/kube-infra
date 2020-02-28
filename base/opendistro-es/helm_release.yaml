@@ -3,40 +3,10 @@ kind: HelmRelease
 metadata:
   name: opendistro-es
 spec:
-  releaseName: opendistro-rnd
+  releaseName: opendistro
   chart:
     git: git@github.com:opendistro-for-elasticsearch/opendistro-build.git
     path: "helm/opendistro-es"
-    ref: master
+    ref: "opendistro-1.5"
   values:
-    kibana:
-      enabled: true
-      image: amazon/opendistro-for-elasticsearch-kibana
-      imageTag: 1.4.0
-      replicas: 1
-      port: 5601
-      externalPort: 443
-      resources: 
-       limits:
-         cpu: 2500m
-         memory: 2Gi
-       requests:
-         cpu: 500m
-         memory: 512Mi
-    elasticsearch:
-      image: amazon/opendistro-for-elasticsearch
-      imageTag: 1.4.0
-      master:
-        enabled: true
-        replicas: 1
-        persistence:
-          enabled: false
-      data:
-        enabled: true
-        replicas: 1
-        updateStrategy: "RollingUpdate"
-        persistence:
-          enabled: false
-      client:
-        enabled: true
-        replicas: 1
+

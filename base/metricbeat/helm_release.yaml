@@ -9,35 +9,3 @@ spec:
     name: metricbeat
     version: 7.6.0
   values:
-    daemonset:
-      enabled: false
-    rbac:
-      pspEnabled: true
-    extraEnvs:
-      - name: ELASTICSEARCH_HOSTS
-        value: 'elasticsearch:9200'
-      - name: NODE_IP
-        valueFrom:
-          fieldRef:
-            fieldPath: status.hostIP  
-    metricbeatConfig:
-      metricbeat.yml: |
-        metricbeat.modules:
-        - module: kubernetes
-          enabled: true
-          metricsets:
-            - event
-        output.elasticsearch:
-          hosts: ${ELASTICSEARCH_HOSTS:elasticsearch-lb:9200}'
-          loadbalancer: true
-          compression_level: 4
-          protocol: https
-          index: "k8s.metrics-%{+yyyy.MM.dd}"
-        setup.ilm.enabled: false
-        setup.template.enabled: true
-        setup.template.name: "k8s"
-        setup.template.pattern: "k8s.*"
-        setup.template.overwrite: false
-        setup.template.settings:
-          index.number_of_shards: 1
-          index.number_of_replicas: 1 

@@ -9,34 +9,5 @@ spec:
     name: filebeat
     version: 7.6.0
   values:
-    extraVolumeMounts:
-      - name: inputs
-        mountPath: /usr/share/filebeat/inputs.d
-        readOnly: true
-    extraVolumes:
-      - name: inputs
-        configMap:
-          defaultMode: 0600
-          name: filebeat-inputs
-    filebeatConfig:
-      filebeat.yml: |
-        filebeat.config:
-          inputs:
-            enabled: true
-            path: inputs.d/*.yml
-          modules:
-            path: ${path.config}/modules.d/*.yml
-            reload.enabled: false                
-
-        logging.level: debug
-        logging.to_files: true
-        logging.files:
-          path: /var/log/filebeat
-          name: filebeat
-          keepfiles: 2
-          permissions: 0644
-          logging.files.rotateeverybytes: 268435456
-        logging.metrics.enabled: false
-        logging.json: false  
 
 

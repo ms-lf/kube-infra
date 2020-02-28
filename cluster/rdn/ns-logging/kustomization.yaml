@@ -5,5 +5,9 @@ bases:
 - ../../../base/metricbeat
 resources:
 - ns-logging.yaml
-- filebeat-inputs.yaml
+
+patchesStrategicMerge:
+- metricbeat_patch.yaml
+- filebeat_patch.yaml
+- opendistro_patch.yaml
 
