@@ -11,4 +11,4 @@ resources:
 - ns-monitoring
 - ns-sops
 - ns-ingress-nginx
-- kube-system
+- ns-kube-system
