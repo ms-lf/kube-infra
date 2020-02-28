@@ -6,11 +6,7 @@ spec:
   releaseName: opendistro-rnd
   values:
     kibana:
-      enabled: true
-      image: amazon/opendistro-for-elasticsearch-kibana
       imageTag: 1.4.0
-      replicas: 1
-      port: 5601
       externalPort: 443
       resources: 
        limits:
@@ -20,19 +16,32 @@ spec:
          cpu: 500m
          memory: 512Mi
     elasticsearch:
-      image: amazon/opendistro-for-elasticsearch
       imageTag: 1.4.0
       master:
-        enabled: true
-        replicas: 1
         persistence:
           enabled: false
+        resources: 
+          limits:
+            cpu: 1
+            memory: 1024Mi
+          requests:
+            cpu: 200m
+            memory: 1024Mi
       data:
-        enabled: true
-        replicas: 1
-        updateStrategy: "RollingUpdate"
         persistence:
           enabled: false
+        resources: 
+          limits:
+            cpu: 1
+            memory: 1024Mi
+          requests:
+            cpu: 200m
+            memory: 1024Mi
       client:
-        enabled: true
-        replicas: 1
+        resources: 
+          limits:
+            cpu: 1
+            memory: 1024Mi
+          requests:
+            cpu: 200m
+            memory: 1024Mi
