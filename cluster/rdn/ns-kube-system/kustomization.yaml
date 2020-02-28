@@ -1,0 +1,9 @@
+namespace: kube-system
+resources:
+- dashboard_cert.yaml
+
+bases:
+- ../../../base/kubernetes-dashboard
+
+patchesStrategicMerge:
+- dashboard_patch.yaml

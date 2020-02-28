@@ -1,0 +1,34 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kubernetes-dashboard
+spec:
+  values:
+    enableSkipLogin: false
+    enableInsecureLogin: false
+    extraArgs:
+      - --system-banner="LF RND Cluster"
+      - --token-ttl=259200
+    service:
+      type: ClusterIP
+      externalPort: 443
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: 'true'
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+      paths:
+        - /
+      hosts:
+        - dashboard.kops.k8s.local
+      tls:
+        - secretName: kubernetes-dashboard-certs
+          hosts:
+            - dashboard.kops.k8s.local
+    rbac:
+      create: true
+      clusterAdminRole: true
+      clusterReadOnlyRole: false
+    serviceAccount:
+      create: false   

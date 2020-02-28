@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: dashboard-certificate
+spec:
+  secretName: kubernetes-dashboard-certs
+  issuerRef:
+    name: self-signed-certificate-issuer
+    kind: Issuer
+  commonName: dashboard-certificate
+  usages:
+  - "any"
+  dnsNames:
+    - dashboard.kops.k8s.local
+    - localhost
+  renewBefore: 360h 
