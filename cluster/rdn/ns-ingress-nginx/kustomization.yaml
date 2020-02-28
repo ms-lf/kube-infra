@@ -1,0 +1,5 @@
+namespace: ingress-nginx
+resources:
+- ns-ingress-nginx.yaml
+- internal
+- pub

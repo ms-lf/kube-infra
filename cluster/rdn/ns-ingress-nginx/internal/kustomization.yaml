@@ -1,0 +1,17 @@
+
+bases:
+- ../../../../base/nginx-ingress
+
+patchesJson6902:
+- target:
+    group: helm.fluxcd.io
+    version: v1
+    kind: HelmRelease
+    name: ingress-nginx
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: ingress-nginx-internal
+
+patchesStrategicMerge:
+- ingress_internal.yaml

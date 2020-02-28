@@ -10,3 +10,4 @@ resources:
 - ns-logging
 - ns-monitoring
 - ns-sops
+- ns-ingress-nginx

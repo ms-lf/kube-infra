@@ -1,0 +1,23 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: ingress-nginx
+spec:
+  releaseName: ingress-nginx-pub
+  values:
+    controller:
+      ingressClass: nginx
+      service:
+        annotations:
+          service.beta.kubernetes.io/aws-load-balancer-type: "elb"
+        clusterIP: ""
+        loadBalancerIP: ""
+        loadBalancerSourceRanges:
+          - "0.0.0.0/0"
+
+      metrics:
+        enabled: true
+        service:
+          annotations:
+            prometheus.io/scrape: "true"
+            prometheus.io/port: "10254"
